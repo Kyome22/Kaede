@@ -1,0 +1,8 @@
+version: "Apple Swift version 4.2 (swiftlang-1000.11.37.1 clang-1000.11.45.1)"
+options: "06b352c98004fd79f9aff23cf045e305"
+build_time: [1538920418, 988883000]
+inputs:
+  "/Users/takuto/Desktop/Kaede/Kaede/Transliterate.swift": [1538905252, 0]
+  "/Users/takuto/Desktop/Kaede/Kaede/Kaede.swift": [1538920410, 0]
+  "/Users/takuto/Desktop/Kaede/Kaede/RomajiToKana.swift": [1538905227, 0]
+  "/Users/takuto/Desktop/Kaede/Kaede/Word.swift": [1538905153, 0]

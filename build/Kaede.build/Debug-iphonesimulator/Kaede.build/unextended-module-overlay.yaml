@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/takuto/Library/Developer/Xcode/DerivedData/Kaede-gnvtovveaidlprckeicvtqanwpne/Build/Products/Debug-iphonesimulator/Kaede.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/takuto/Desktop/Kaede/build/Kaede.build/Debug-iphonesimulator/Kaede.build/unextended-module.modulemap",
+    }]
+  }]
+}

@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		1C9EA135216A3F7D00652701 /* Kaede-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1C9EA136216A3F7D00652701 /* Build configuration list for PBXAggregateTarget "Kaede-Universal" */;
+			buildPhases = (
+				1C9EA139216A3F8500652701 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Kaede-Universal";
+			productName = "Kaede-Universal";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1C7711A1216A0A5E00D2EDAD /* Kaede.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C771197216A0A5E00D2EDAD /* Kaede.framework */; };
+		1C7711A6216A0A5E00D2EDAD /* KaedeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711A5216A0A5E00D2EDAD /* KaedeTests.swift */; };
+		1C7711A8216A0A5E00D2EDAD /* Kaede.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C77119A216A0A5E00D2EDAD /* Kaede.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1C7711B2216A0AC200D2EDAD /* Kaede.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B1216A0AC200D2EDAD /* Kaede.swift */; };
+		1C7711B4216A0AF400D2EDAD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B3216A0AF400D2EDAD /* Word.swift */; };
+		1C7711B6216A0BD500D2EDAD /* RomajiToKana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B5216A0BD500D2EDAD /* RomajiToKana.swift */; };
+		1C7711B8216A0C1D00D2EDAD /* Transliterate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B7216A0C1D00D2EDAD /* Transliterate.swift */; };
+		1C7711BA216A0C3D00D2EDAD /* dictionary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1C7711B9216A0C3D00D2EDAD /* dictionary.csv */; };
+		1C7711BB216A0C6000D2EDAD /* dictionary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1C7711B9216A0C3D00D2EDAD /* dictionary.csv */; };
+		1C7711BC216A0C6600D2EDAD /* Kaede.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B1216A0AC200D2EDAD /* Kaede.swift */; };
+		1C7711BD216A0C6800D2EDAD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B3216A0AF400D2EDAD /* Word.swift */; };
+		1C7711BE216A0C6B00D2EDAD /* RomajiToKana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B5216A0BD500D2EDAD /* RomajiToKana.swift */; };
+		1C7711BF216A0C6D00D2EDAD /* Transliterate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B7216A0C1D00D2EDAD /* Transliterate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1C7711A2216A0A5E00D2EDAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1C77118E216A0A5E00D2EDAD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1C771196216A0A5E00D2EDAD;
+			remoteInfo = Kaede;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1C771197216A0A5E00D2EDAD /* Kaede.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kaede.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C77119A216A0A5E00D2EDAD /* Kaede.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Kaede.h; sourceTree = "<group>"; };
+		1C77119B216A0A5E00D2EDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C7711A0216A0A5E00D2EDAD /* KaedeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaedeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C7711A5216A0A5E00D2EDAD /* KaedeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaedeTests.swift; sourceTree = "<group>"; };
+		1C7711A7216A0A5E00D2EDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1C7711B1216A0AC200D2EDAD /* Kaede.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaede.swift; sourceTree = "<group>"; };
+		1C7711B3216A0AF400D2EDAD /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		1C7711B5216A0BD500D2EDAD /* RomajiToKana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomajiToKana.swift; sourceTree = "<group>"; };
+		1C7711B7216A0C1D00D2EDAD /* Transliterate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transliterate.swift; sourceTree = "<group>"; };
+		1C7711B9216A0C3D00D2EDAD /* dictionary.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.csv; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1C771194216A0A5E00D2EDAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C77119D216A0A5E00D2EDAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7711A1216A0A5E00D2EDAD /* Kaede.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1C77118D216A0A5E00D2EDAD = {
+			isa = PBXGroup;
+			children = (
+				1C771199216A0A5E00D2EDAD /* Kaede */,
+				1C7711A4216A0A5E00D2EDAD /* KaedeTests */,
+				1C771198216A0A5E00D2EDAD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1C771198216A0A5E00D2EDAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1C771197216A0A5E00D2EDAD /* Kaede.framework */,
+				1C7711A0216A0A5E00D2EDAD /* KaedeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1C771199216A0A5E00D2EDAD /* Kaede */ = {
+			isa = PBXGroup;
+			children = (
+				1C7711B9216A0C3D00D2EDAD /* dictionary.csv */,
+				1C77119A216A0A5E00D2EDAD /* Kaede.h */,
+				1C7711B1216A0AC200D2EDAD /* Kaede.swift */,
+				1C7711B3216A0AF400D2EDAD /* Word.swift */,
+				1C7711B5216A0BD500D2EDAD /* RomajiToKana.swift */,
+				1C7711B7216A0C1D00D2EDAD /* Transliterate.swift */,
+				1C77119B216A0A5E00D2EDAD /* Info.plist */,
+			);
+			path = Kaede;
+			sourceTree = "<group>";
+		};
+		1C7711A4216A0A5E00D2EDAD /* KaedeTests */ = {
+			isa = PBXGroup;
+			children = (
+				1C7711A5216A0A5E00D2EDAD /* KaedeTests.swift */,
+				1C7711A7216A0A5E00D2EDAD /* Info.plist */,
+			);
+			path = KaedeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		1C771192216A0A5E00D2EDAD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7711A8216A0A5E00D2EDAD /* Kaede.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1C771196216A0A5E00D2EDAD /* Kaede */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C7711AB216A0A5E00D2EDAD /* Build configuration list for PBXNativeTarget "Kaede" */;
+			buildPhases = (
+				1C771192216A0A5E00D2EDAD /* Headers */,
+				1C771193216A0A5E00D2EDAD /* Sources */,
+				1C771194216A0A5E00D2EDAD /* Frameworks */,
+				1C771195216A0A5E00D2EDAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kaede;
+			productName = Kaede;
+			productReference = 1C771197216A0A5E00D2EDAD /* Kaede.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		1C77119F216A0A5E00D2EDAD /* KaedeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C7711AE216A0A5E00D2EDAD /* Build configuration list for PBXNativeTarget "KaedeTests" */;
+			buildPhases = (
+				1C77119C216A0A5E00D2EDAD /* Sources */,
+				1C77119D216A0A5E00D2EDAD /* Frameworks */,
+				1C77119E216A0A5E00D2EDAD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1C7711A3216A0A5E00D2EDAD /* PBXTargetDependency */,
+			);
+			name = KaedeTests;
+			productName = KaedeTests;
+			productReference = 1C7711A0216A0A5E00D2EDAD /* KaedeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1C77118E216A0A5E00D2EDAD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Takuto Nakamura";
+				TargetAttributes = {
+					1C771196216A0A5E00D2EDAD = {
+						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
+					};
+					1C77119F216A0A5E00D2EDAD = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					1C9EA135216A3F7D00652701 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 1C771191216A0A5E00D2EDAD /* Build configuration list for PBXProject "Kaede" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1C77118D216A0A5E00D2EDAD;
+			productRefGroup = 1C771198216A0A5E00D2EDAD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1C771196216A0A5E00D2EDAD /* Kaede */,
+				1C77119F216A0A5E00D2EDAD /* KaedeTests */,
+				1C9EA135216A3F7D00652701 /* Kaede-Universal */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1C771195216A0A5E00D2EDAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7711BA216A0C3D00D2EDAD /* dictionary.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C77119E216A0A5E00D2EDAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7711BB216A0C6000D2EDAD /* dictionary.csv in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C9EA139216A3F8500652701 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\n# Step 2. Copy the framework structure (from iphoneos build) to the universal folder\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\n# Step 3. Copy Swift modules from iphonesimulator build (if it exists) to the copied framework directory\nSIMULATOR_SWIFT_MODULES_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\"\nif [ -d \"${SIMULATOR_SWIFT_MODULES_DIR}\" ]; then\ncp -R \"${SIMULATOR_SWIFT_MODULES_DIR}\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\nfi\n\n# Step 4. Create universal binary file using lipo and place the combined executable in the copied framework directory\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\n# Step 5. Convenience step to copy the framework to the project's directory\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n\n# Step 6. Convenience step to open the project's directory in Finder\nopen \"${PROJECT_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1C771193216A0A5E00D2EDAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7711B8216A0C1D00D2EDAD /* Transliterate.swift in Sources */,
+				1C7711B2216A0AC200D2EDAD /* Kaede.swift in Sources */,
+				1C7711B6216A0BD500D2EDAD /* RomajiToKana.swift in Sources */,
+				1C7711B4216A0AF400D2EDAD /* Word.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1C77119C216A0A5E00D2EDAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C7711BF216A0C6D00D2EDAD /* Transliterate.swift in Sources */,
+				1C7711BC216A0C6600D2EDAD /* Kaede.swift in Sources */,
+				1C7711BE216A0C6B00D2EDAD /* RomajiToKana.swift in Sources */,
+				1C7711A6216A0A5E00D2EDAD /* KaedeTests.swift in Sources */,
+				1C7711BD216A0C6800D2EDAD /* Word.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1C7711A3216A0A5E00D2EDAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1C771196216A0A5E00D2EDAD /* Kaede */;
+			targetProxy = 1C7711A2216A0A5E00D2EDAD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1C7711A9216A0A5E00D2EDAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1C7711AA216A0A5E00D2EDAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1C7711AC216A0A5E00D2EDAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Kaede/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.Kaede;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C7711AD216A0A5E00D2EDAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Kaede/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.Kaede;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1C7711AF216A0A5E00D2EDAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				INFOPLIST_FILE = KaedeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.KaedeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1C7711B0216A0A5E00D2EDAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				INFOPLIST_FILE = KaedeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.KaedeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1C9EA137216A3F7D00652701 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1C9EA138216A3F7D00652701 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C771191216A0A5E00D2EDAD /* Build configuration list for PBXProject "Kaede" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C7711A9216A0A5E00D2EDAD /* Debug */,
+				1C7711AA216A0A5E00D2EDAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C7711AB216A0A5E00D2EDAD /* Build configuration list for PBXNativeTarget "Kaede" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C7711AC216A0A5E00D2EDAD /* Debug */,
+				1C7711AD216A0A5E00D2EDAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C7711AE216A0A5E00D2EDAD /* Build configuration list for PBXNativeTarget "KaedeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C7711AF216A0A5E00D2EDAD /* Debug */,
+				1C7711B0216A0A5E00D2EDAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C9EA136216A3F7D00652701 /* Build configuration list for PBXAggregateTarget "Kaede-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C9EA137216A3F7D00652701 /* Debug */,
+				1C9EA138216A3F7D00652701 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1C77118E216A0A5E00D2EDAD /* Project object */;
+}
