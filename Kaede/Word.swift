@@ -9,7 +9,6 @@
 import Foundation
 
 struct Word {
-    let frequency: Int
-    let after: String
     let before: String
+    let after: String
 }

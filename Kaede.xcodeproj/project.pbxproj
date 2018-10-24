@@ -28,12 +28,12 @@
 		1C7711B4216A0AF400D2EDAD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B3216A0AF400D2EDAD /* Word.swift */; };
 		1C7711B6216A0BD500D2EDAD /* RomajiToKana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B5216A0BD500D2EDAD /* RomajiToKana.swift */; };
 		1C7711B8216A0C1D00D2EDAD /* Transliterate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B7216A0C1D00D2EDAD /* Transliterate.swift */; };
-		1C7711BA216A0C3D00D2EDAD /* dictionary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1C7711B9216A0C3D00D2EDAD /* dictionary.csv */; };
-		1C7711BB216A0C6000D2EDAD /* dictionary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1C7711B9216A0C3D00D2EDAD /* dictionary.csv */; };
 		1C7711BC216A0C6600D2EDAD /* Kaede.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B1216A0AC200D2EDAD /* Kaede.swift */; };
 		1C7711BD216A0C6800D2EDAD /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B3216A0AF400D2EDAD /* Word.swift */; };
 		1C7711BE216A0C6B00D2EDAD /* RomajiToKana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B5216A0BD500D2EDAD /* RomajiToKana.swift */; };
 		1C7711BF216A0C6D00D2EDAD /* Transliterate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711B7216A0C1D00D2EDAD /* Transliterate.swift */; };
+		1C80A0CD2180FC67007DED43 /* dictionary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1C80A0CC2180FC67007DED43 /* dictionary.csv */; };
+		1C80A0CE2180FC67007DED43 /* dictionary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 1C80A0CC2180FC67007DED43 /* dictionary.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +57,7 @@
 		1C7711B3216A0AF400D2EDAD /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		1C7711B5216A0BD500D2EDAD /* RomajiToKana.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomajiToKana.swift; sourceTree = "<group>"; };
 		1C7711B7216A0C1D00D2EDAD /* Transliterate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transliterate.swift; sourceTree = "<group>"; };
-		1C7711B9216A0C3D00D2EDAD /* dictionary.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.csv; sourceTree = "<group>"; };
+		1C80A0CC2180FC67007DED43 /* dictionary.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 		1C771199216A0A5E00D2EDAD /* Kaede */ = {
 			isa = PBXGroup;
 			children = (
-				1C7711B9216A0C3D00D2EDAD /* dictionary.csv */,
+				1C80A0CC2180FC67007DED43 /* dictionary.csv */,
 				1C77119A216A0A5E00D2EDAD /* Kaede.h */,
 				1C7711B1216A0AC200D2EDAD /* Kaede.swift */,
 				1C7711B3216A0AF400D2EDAD /* Word.swift */,
@@ -216,7 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7711BA216A0C3D00D2EDAD /* dictionary.csv in Resources */,
+				1C80A0CD2180FC67007DED43 /* dictionary.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,7 +224,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C7711BB216A0C6000D2EDAD /* dictionary.csv in Resources */,
+				1C80A0CE2180FC67007DED43 /* dictionary.csv in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +410,7 @@
 		1C7711AC216A0A5E00D2EDAD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -438,6 +439,7 @@
 		1C7711AD216A0A5E00D2EDAD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;

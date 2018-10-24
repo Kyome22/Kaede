@@ -6,7 +6,8 @@
 //  Copyright © 2018 Takuto Nakamura. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//#import <UIKit/UIKit.h>
 
 //! Project version number for Kaede.
 FOUNDATION_EXPORT double KaedeVersionNumber;

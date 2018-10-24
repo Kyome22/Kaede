@@ -21,18 +21,28 @@ class KaedeTests: XCTestCase {
 
     func testKaede() {
         let kaede = Kaede()
-        var res = kaede.requestCandidates("kokoro")
+        var gomi = kaede.convertRomanToKana("saikou")
+        var res = kaede.requestCandidates(gomi)
         Swift.print(res)
-        res = kaede.requestCandidates("tsukuba")
+        
+        gomi = kaede.convertRomanToKana("ki")
+        res = kaede.requestCandidates(gomi)
         Swift.print(res)
-        res = kaede.requestCandidates("ryoushin")
-        Swift.print(res)
-        res = kaede.requestCandidates("nani")
-        Swift.print(res)
-        res = kaede.requestCandidates("nyan")
-        Swift.print(res)
-        res = kaede.requestCandidates("nyann")
-        Swift.print(res)
+    }
+    
+    func testKaede2() {
+        let origin: String = "kikaikagakunomati"
+        let kaede2 = Kaede()
+        Swift.print(origin)
+        let gomi = kaede2.convertRomanToKana(origin)
+        Swift.print(gomi)
+        let res = kaede2.requestCandidatesOfSentence(gomi)
+        
+        Swift.print("Candidated:[")
+        for r in res {
+            Swift.print("\tBody: \(r.body), Reminder: \(r.remainder)")
+        }
+        Swift.print("]")
     }
 
     func testPerformanceExample() {
