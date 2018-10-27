@@ -72,8 +72,18 @@ open class Kaede: NSObject {
         results.append((body: text, remainder: ""))
         results.append((body: Transliterate.toKatakana(text), remainder: ""))
         results.append((body: Transliterate.toHalfKatakana(text), remainder: ""))
-        let orderedSet = NSOrderedSet(array: results)
-        results = orderedSet.array as! [(body: String, remainder: String)]
+        var i: Int = 0
+        while i < results.count - 1 {
+            var j: Int = i + 1
+            while j < results.count {
+                if results[i].body == results[j].body {
+                    results.remove(at: j)
+                } else {
+                    j += 1
+                }
+            }
+            i += 1
+        }
         return results
     }
     
