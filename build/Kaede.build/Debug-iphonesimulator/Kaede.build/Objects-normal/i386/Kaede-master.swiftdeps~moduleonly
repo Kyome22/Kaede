@@ -1,0 +1,8 @@
+version: "Apple Swift version 4.2.1 (swiftlang-1000.11.42 clang-1000.11.45.1)"
+options: "ca782b71b723785cd37354a69221b02a"
+build_time: [1544553909, 467304000]
+inputs:
+  "/Users/takuto/Dropbox/App_iOS/Kaede/Kaede/Transliterate.swift": [1538905252, 0]
+  "/Users/takuto/Dropbox/App_iOS/Kaede/Kaede/Kaede.swift": [1540678510, 0]
+  "/Users/takuto/Dropbox/App_iOS/Kaede/Kaede/RomajiToKana.swift": [1538905227, 0]
+  "/Users/takuto/Dropbox/App_iOS/Kaede/Kaede/Word.swift": [1540408777, 0]

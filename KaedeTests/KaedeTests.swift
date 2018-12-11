@@ -21,12 +21,12 @@ class KaedeTests: XCTestCase {
 
     func testKaede() {
         let kaede = Kaede()
-        var gomi = kaede.convertRomanToKana("saikou")
-        var res = kaede.requestCandidates(gomi)
+        var meu = kaede.convertRomanToKana("saikou")
+        var res = kaede.requestCandidates(meu)
         Swift.print(res)
         
-        gomi = kaede.convertRomanToKana("ki")
-        res = kaede.requestCandidates(gomi)
+        meu = kaede.convertRomanToKana("ki")
+        res = kaede.requestCandidates(meu)
         Swift.print(res)
     }
     
@@ -34,9 +34,9 @@ class KaedeTests: XCTestCase {
         let origin: String = "kikaikagakunomati"
         let kaede2 = Kaede()
         Swift.print(origin)
-        let gomi = kaede2.convertRomanToKana(origin)
-        Swift.print(gomi)
-        let res = kaede2.requestCandidatesOfSentence(gomi)
+        let meu = kaede2.convertRomanToKana(origin)
+        Swift.print(meu)
+        let res = kaede2.requestCandidatesOfSentence(meu)
         
         Swift.print("Candidated:[")
         for r in res {

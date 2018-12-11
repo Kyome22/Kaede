@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         let text1 = kaede.convertRomanToKana("saikou")
         Swift.print(text1)
-        let res1 = kaede.requestCandidatesOfSentence(text)
+        let res1 = kaede.requestCandidates(text)
         Swift.print(res1)
 
 

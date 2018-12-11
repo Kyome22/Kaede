@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		1C8697D721C037BE00180DFB /* Kaede-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1C8697DA21C037BE00180DFB /* Build configuration list for PBXAggregateTarget "Kaede-Universal" */;
+			buildPhases = (
+				1C8697DB21C037C900180DFB /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "Kaede-Universal";
+			productName = "Kaede-Universal";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		1C7711A1216A0A5E00D2EDAD /* Kaede.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C771197216A0A5E00D2EDAD /* Kaede.framework */; };
 		1C7711A6216A0A5E00D2EDAD /* KaedeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7711A5216A0A5E00D2EDAD /* KaedeTests.swift */; };
@@ -173,6 +187,9 @@
 					1C77119F216A0A5E00D2EDAD = {
 						CreatedOnToolsVersion = 10.0;
 					};
+					1C8697D721C037BE00180DFB = {
+						CreatedOnToolsVersion = 10.1;
+					};
 				};
 			};
 			buildConfigurationList = 1C771191216A0A5E00D2EDAD /* Build configuration list for PBXProject "Kaede" */;
@@ -189,6 +206,7 @@
 			targets = (
 				1C771196216A0A5E00D2EDAD /* Kaede */,
 				1C77119F216A0A5E00D2EDAD /* KaedeTests */,
+				1C8697D721C037BE00180DFB /* Kaede-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -211,6 +229,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C8697DB21C037C900180DFB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\nxcodebuild -target \"${PROJECT_NAME}\" ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\nxcodebuild -target \"${PROJECT_NAME}\" -configuration ${CONFIGURATION} -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" clean build\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework\" \"${UNIVERSAL_OUTPUTFOLDER}/\"\n\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule/.\" \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/Modules/${PROJECT_NAME}.swiftmodule\"\n\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${PROJECT_NAME}.framework/${PROJECT_NAME}\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${PROJECT_NAME}.framework/${PROJECT_NAME}\"\n\ncp -R \"${UNIVERSAL_OUTPUTFOLDER}/${PROJECT_NAME}.framework\" \"${PROJECT_DIR}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C771193216A0A5E00D2EDAD /* Sources */ = {
@@ -464,6 +502,24 @@
 			};
 			name = Release;
 		};
+		1C8697D821C037BE00180DFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1C8697D921C037BE00180DFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VJ5N2X84K8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -490,6 +546,15 @@
 			buildConfigurations = (
 				1C7711AF216A0A5E00D2EDAD /* Debug */,
 				1C7711B0216A0A5E00D2EDAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1C8697DA21C037BE00180DFB /* Build configuration list for PBXAggregateTarget "Kaede-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C8697D821C037BE00180DFB /* Debug */,
+				1C8697D921C037BE00180DFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
