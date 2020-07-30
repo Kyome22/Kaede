@@ -2,8 +2,8 @@
 //  KaedeTests.swift
 //  KaedeTests
 //
-//  Created by Takuto Nakamura on 2018/10/07.
-//  Copyright © 2018 Takuto Nakamura. All rights reserved.
+//  Created by Takuto Nakamura on 2020/07/31.
+//  Copyright © 2020 Takuto Nakamura. All rights reserved.
 //
 
 import XCTest
@@ -11,41 +11,44 @@ import XCTest
 
 class KaedeTests: XCTestCase {
 
-    override func setUp() {
+    override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
-    override func tearDown() {
+    override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testKaede() {
-        let kaede = Kaede()
-        var meu = kaede.convertRomanToKana("saikou")
-        var res = kaede.requestCandidates(meu)
-        Swift.print(res)
-        
-        meu = kaede.convertRomanToKana("ki")
-        res = kaede.requestCandidates(meu)
-        Swift.print(res)
-    }
-    
-    func testKaede2() {
-        let origin: String = "kikaikagakunomati"
-        let kaede2 = Kaede()
-        Swift.print(origin)
-        let meu = kaede2.convertRomanToKana(origin)
-        Swift.print(meu)
-        let res = kaede2.requestCandidatesOfSentence(meu)
-        
-        Swift.print("Candidated:[")
-        for r in res {
-            Swift.print("\tBody: \(r.body), Reminder: \(r.remainder)")
-        }
-        Swift.print("]")
+    func testInitializeKaede() throws {
+        let kaede: Kaede? = Kaede()
+        XCTAssertNotNil(kaede)
     }
 
-    func testPerformanceExample() {
+    func testText() {
+        let kaede = Kaede()
+        let saikou = kaede.convertRomanToKana(text: "saikou")
+        XCTAssertEqual(saikou, "さいこう")
+
+        let candidates = kaede.requestCandidates(text: saikou)
+        let expects = ["催行", "再攻", "再校", "再構", "再考", "再興",
+                       "採光", "採鉱", "斉衡", "最硬", "最高", "砕鉱",
+                       "菜肴", "サイコウ", "ｻｲｺｳ", "さいこう"]
+        XCTAssertEqual(candidates, expects)
+    }
+
+    func testSentence() {
+        let kaede = Kaede()
+        let sentence = kaede.convertRomanToKana(text: "kikaikagakunomati")
+        XCTAssertEqual(sentence, "きかいかがくのまち")
+
+        let candidates = kaede.requestCandidates(of: sentence)
+        candidates.forEach { (candidate) in
+            Swift.print(candidate.desctiption)
+        }
+    }
+
+
+    func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.

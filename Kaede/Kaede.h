@@ -2,12 +2,11 @@
 //  Kaede.h
 //  Kaede
 //
-//  Created by Takuto Nakamura on 2018/10/07.
-//  Copyright © 2018 Takuto Nakamura. All rights reserved.
+//  Created by Takuto Nakamura on 2020/07/31.
+//  Copyright © 2020 Takuto Nakamura. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-//#import <UIKit/UIKit.h>
 
 //! Project version number for Kaede.
 FOUNDATION_EXPORT double KaedeVersionNumber;

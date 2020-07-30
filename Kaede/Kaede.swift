@@ -2,113 +2,81 @@
 //  Kaede.swift
 //  Kaede
 //
-//  Created by Takuto Nakamura on 2018/10/07.
-//  Copyright © 2018 Takuto Nakamura. All rights reserved.
+//  Created by Takuto Nakamura on 2020/07/31.
+//  Copyright © 2020 Takuto Nakamura. All rights reserved.
 //
 
-import Foundation
+//import Foundation
 
-open class Kaede: NSObject {
-    
+open class Kaede {
+
     private var list = [[Word]]()
-    
-    
-    public override init() {
-        super.init()
+
+    init() {
         inputCSV()
     }
-    
+
     private func inputCSV() {
-        if let filePath = Bundle(for: type(of: self)).path(forResource: "dictionary", ofType: "csv") {
-            do {
-                let str = try String(contentsOfFile: filePath, encoding: String.Encoding.utf8)
-                var l: Int = 0
-                str.enumerateLines { [weak self] (line, stop) in
-                    let source = line.components(separatedBy: ",")
-                    if source.count == 2 {
-                        let length = source[0].count
-                        if length > l {
-                            let words = [Word]()
-                            self?.list.append(words)
-                            l = length
-                        }
-                        let word = Word(before: source[0], after: source[1])
-                        guard let _self = self else { return }
-                        _self.list[_self.list.count - 1].append(word)
-                    }
-                }
-                Swift.print(list.count)
-            } catch let error {
-                Swift.print(error.localizedDescription)
+        guard
+            let filePath = Bundle(for: type(of: self)).path(forResource: "dictionary", ofType: "csv"),
+            let file = try? String(contentsOfFile: filePath, encoding: .utf8)
+            else { fatalError("Could not load the dictionary.csv") }
+        file.enumerateLines { [weak self] (line, _) in
+            guard let self = self else { return }
+            let source = line.components(separatedBy: ",")
+            if source.count != 2 { return }
+            if self.list.count < source[0].count {
+                self.list.append([])
             }
-        } else {
-            Swift.print("gomi")
+            self.list[self.list.count - 1].append(Word(ruby: source[0], value: source[1]))
         }
     }
-    
-    public func convertRomanToKana(_ text: String) -> String {
+
+    public func convertRomanToKana(text: String) -> String {
         return RomajiToKana.convertHiragana(roman: text)
     }
-    
-    public func requestCandidates(_ text: String) -> [String] {
+
+    public func requestCandidates(text: String) -> [String] {
         var results = [String]()
-        if list.count >= text.count {
-            for test in list[text.count - 1].reversed() {
-                if text == test.before {
-                    results.append(test.after)
-                }
-            }
+        if text.count <= list.count {
+            let words = list[text.count - 1].filter { $0.ruby == text }.map { $0.value }
+            results.append(contentsOf: words)
         }
         results.append(Transliterate.toKatakana(text))
         results.append(Transliterate.toHalfKatakana(text))
         results.append(text)
-        let orderedSet = NSOrderedSet(array: results)
-        results = orderedSet.array as! [String]
-        return results
+        return NSOrderedSet(array: results).array as! [String]
     }
-    
-    public func requestCandidatesOfSentence(_ text: String) -> [(body: String, remainder: String)] {
-        var results = extractCandidates(text)
-        results.append((body: text, remainder: ""))
-        results.append((body: Transliterate.toKatakana(text), remainder: ""))
-        results.append((body: Transliterate.toHalfKatakana(text), remainder: ""))
-        var i: Int = 0
-        while i < results.count - 1 {
-            var j: Int = i + 1
-            while j < results.count {
-                if results[i].body == results[j].body {
-                    results.remove(at: j)
-                } else {
-                    j += 1
-                }
-            }
-            i += 1
-        }
-        return results
-    }
-    
-    private func extractCandidates(_ text: String) -> [(body: String, remainder: String)] {
-        var results = [(body: String, remainder: String)]()
-        if text.count == 0 {
-            return results
-        }
+
+    private func extractCandidates(text: String) -> [Candidate] {
+        if text.isEmpty { return [] }
+        var results = [Candidate]()
         for i in (1 ... min(list.count, text.count)).reversed() {
             let strL = String(text[text.startIndex ..< text.index(text.startIndex, offsetBy: i)])
             let strR = String(text[text.index(text.startIndex, offsetBy: i) ..< text.endIndex])
             var flag: Bool = false
             for test in list[strL.count - 1] {
-                if strL == test.before {
-                    flag = true
-                    results.append((body: test.after, remainder: strR))
-                }
+                if strL != test.ruby { continue }
+                flag = true
+                results.append(Candidate(body: test.value, remainder: strR))
             }
             if flag {
-                results.append((body: strL, remainder: strR))
-                results.append((body: Transliterate.toKatakana(strL), remainder: strR))
-                results.append((body: Transliterate.toHalfKatakana(strL), remainder: strR))
+                results.append(Candidate(body: strL, remainder: strR))
+                results.append(Candidate(body: Transliterate.toKatakana(strL), remainder: strR))
+                results.append(Candidate(body: Transliterate.toHalfKatakana(strL), remainder: strR))
             }
         }
         return results
     }
-    
+
+    public func requestCandidates(of sentence: String) -> [Candidate] {
+        var results = extractCandidates(text: sentence)
+        results.append(Candidate(body: sentence, remainder: ""))
+        results.append(Candidate(body: Transliterate.toKatakana(sentence), remainder: ""))
+        results.append(Candidate(body: Transliterate.toHalfKatakana(sentence), remainder: ""))
+        return results.reduce([]) { (res, candidate) -> [Candidate] in
+            return res.contains { $0.body == candidate.body } ? res : res + [candidate]
+        }
+    }
+
 }

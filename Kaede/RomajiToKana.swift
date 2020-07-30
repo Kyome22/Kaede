@@ -2,14 +2,12 @@
 //  RomajiToKana.swift
 //  Kaede
 //
-//  Created by Takuto Nakamura on 2018/10/07.
-//  Copyright © 2018 Takuto Nakamura. All rights reserved.
+//  Created by Takuto Nakamura on 2020/07/31.
+//  Copyright © 2020 Takuto Nakamura. All rights reserved.
 //
 
-import Foundation
-
 final class RomajiToKana {
-    
+
     public static func convertHiragana(roman: String) -> String {
         var str = roman.lowercased()
         var n: Int = 0
@@ -40,11 +38,11 @@ final class RomajiToKana {
         }
         return str
     }
-    
+
     private static func isRoman(_ str: Character) -> Bool {
         return NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z]+").evaluate(with: String(str))
     }
-    
+
     private static func nCheck(_ str: String) -> String {
         switch str {
         case "na": return str
@@ -62,7 +60,7 @@ final class RomajiToKana {
             }
         }
     }
-    
+
     private static func xtuCheck(_ str: String) -> String {
         if isRoman(str.first!) && str.first! == str.last! {
             let f = str.first!
@@ -74,7 +72,7 @@ final class RomajiToKana {
         }
         return str
     }
-    
+
     private static func convert(_ str: String) -> String {
         switch str.count {
         case 1:
@@ -104,7 +102,7 @@ final class RomajiToKana {
             return str
         }
     }
-    
+
     private static func one(_ str: String) -> String {
         switch str {
         case "a": return "あ"
@@ -159,7 +157,7 @@ final class RomajiToKana {
         default: return str
         }
     }
-    
+
     private static func two(_ str: String) -> String {
         switch str {
         case "ba": return "ば"
@@ -263,7 +261,7 @@ final class RomajiToKana {
         default: return str
         }
     }
-    
+
     private static func threeY(_ str: String) -> String {
         func yaiueo(head: String, str: String) -> String {
             switch str {
@@ -304,7 +302,7 @@ final class RomajiToKana {
             }
         }
     }
-    
+
     private static func threeH(_ str: String) -> String {
         switch str {
         case "cha": return "ちゃ"
@@ -335,7 +333,7 @@ final class RomajiToKana {
         default: return str
         }
     }
-    
+
     private static func threeW(_ str: String) -> String {
         switch str {
         case "dwa": return "どぁ"
@@ -368,5 +366,5 @@ final class RomajiToKana {
         default: return str
         }
     }
-    
+
 }

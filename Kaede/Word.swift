@@ -2,13 +2,15 @@
 //  Word.swift
 //  Kaede
 //
-//  Created by Takuto Nakamura on 2018/10/07.
-//  Copyright © 2018 Takuto Nakamura. All rights reserved.
+//  Created by Takuto Nakamura on 2020/07/31.
+//  Copyright © 2020 Takuto Nakamura. All rights reserved.
 //
 
-import Foundation
-
 struct Word {
-    let before: String
-    let after: String
+    let ruby: String
+    let value: String
+
+    var desctiption: String {
+        return "ruby:\(ruby), value:\(value)"
+    }
 }
