@@ -18,7 +18,7 @@ open class Kaede {
 
     private func inputCSV() {
         guard
-            let filePath = Bundle(for: type(of: self)).path(forResource: "dictionary", ofType: "csv"),
+            let filePath = Bundle(for: Kaede.self).path(forResource: "dictionary", ofType: "csv"),
             let file = try? String(contentsOfFile: filePath, encoding: .utf8)
             else { fatalError("Could not load the dictionary.csv") }
         file.enumerateLines { [weak self] (line, _) in
