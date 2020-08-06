@@ -8,11 +8,11 @@
 
 //import Foundation
 
-open class Kaede {
+public class Kaede {
 
     private var list = [[Word]]()
 
-    init() {
+    public init() {
         inputCSV()
     }
 

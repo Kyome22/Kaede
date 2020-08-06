@@ -7,10 +7,10 @@
 //
 
 public struct Candidate {
-    let body: String
-    let remainder: String
+    public let body: String
+    public let remainder: String
 
-    var desctiption: String {
+    public var desctiption: String {
         return "body:\(body), remainder:\(remainder)"
     }
 }

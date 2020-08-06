@@ -17,13 +17,13 @@ final class Transliterate {
         }
     }
 
-    public static func toKatakana(_ string: String) -> String {
+    static func toKatakana(_ string: String) -> String {
         return transliterateString(source: string,
                                    transform: kCFStringTransformHiraganaKatakana,
                                    reverse: false)
     }
 
-    public static func toHalfKatakana(_ string: String) -> String {
+    static func toHalfKatakana(_ string: String) -> String {
         return transliterateString(source: toKatakana(string),
                                    transform: kCFStringTransformFullwidthHalfwidth,
                                    reverse: false)

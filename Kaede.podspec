@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "Kaede"
-  spec.version      = "1.0"
+  spec.version      = "1.1"
   spec.summary      = "Japanese IME support; Romaji -> Kana -> Kanaji"
   spec.description  = <<-DESC
     Kaede is a project to support Japanese input method.

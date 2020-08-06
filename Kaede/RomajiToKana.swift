@@ -8,7 +8,7 @@
 
 final class RomajiToKana {
 
-    public static func convertHiragana(roman: String) -> String {
+    static func convertHiragana(roman: String) -> String {
         var str = roman.lowercased()
         var n: Int = 0
         while str.count >= 2 && n < str.count - 1 {
