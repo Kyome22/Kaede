@@ -24,24 +24,24 @@ class KaedeTests: XCTestCase {
         XCTAssertNotNil(kaede)
     }
 
-    func testText() {
+    func testTomanToKana() {
         let kaede = Kaede()
         let saikou = kaede.convertRomanToKana(text: "saikou")
         XCTAssertEqual(saikou, "さいこう")
+    }
 
-        let candidates = kaede.requestCandidates(text: saikou)
+    func testText() {
+        let kaede = Kaede()
+        let candidates = kaede.requestCandidates(text: "saikou")
         let expects = ["催行", "再攻", "再校", "再構", "再考", "再興",
                        "採光", "採鉱", "斉衡", "最硬", "最高", "砕鉱",
-                       "菜肴", "サイコウ", "ｻｲｺｳ", "さいこう"]
+                       "菜肴", "サイコウ", "ｻｲｺｳ", "さいこう", "saikou"]
         XCTAssertEqual(candidates, expects)
     }
 
     func testSentence() {
         let kaede = Kaede()
-        let sentence = kaede.convertRomanToKana(text: "kikaikagakunomati")
-        XCTAssertEqual(sentence, "きかいかがくのまち")
-
-        let candidates = kaede.requestCandidates(of: sentence)
+        let candidates = kaede.requestCandidates(of: "kikaikagakunomati")
         candidates.forEach { (candidate) in
             Swift.print(candidate.desctiption)
         }

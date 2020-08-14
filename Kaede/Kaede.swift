@@ -37,13 +37,15 @@ public class Kaede {
     }
 
     public func requestCandidates(text: String) -> [String] {
+        let kana = convertRomanToKana(text: text)
         var results = [String]()
-        if text.count <= list.count {
-            let words = list[text.count - 1].filter { $0.ruby == text }.map { $0.value }
+        if kana.count <= list.count {
+            let words = list[kana.count - 1].filter { $0.ruby == kana }.map { $0.value }
             results.append(contentsOf: words)
         }
-        results.append(Transliterate.toKatakana(text))
-        results.append(Transliterate.toHalfKatakana(text))
+        results.append(Transliterate.toKatakana(kana))
+        results.append(Transliterate.toHalfKatakana(kana))
+        results.append(kana)
         results.append(text)
         return NSOrderedSet(array: results).array as! [String]
     }
@@ -70,10 +72,12 @@ public class Kaede {
     }
 
     public func requestCandidates(of sentence: String) -> [Candidate] {
-        var results = extractCandidates(text: sentence)
+        let kana = convertRomanToKana(text: sentence)
+        var results = extractCandidates(text: kana)
+        results.append(Candidate(body: kana, remainder: ""))
+        results.append(Candidate(body: Transliterate.toKatakana(kana), remainder: ""))
+        results.append(Candidate(body: Transliterate.toHalfKatakana(kana), remainder: ""))
         results.append(Candidate(body: sentence, remainder: ""))
-        results.append(Candidate(body: Transliterate.toKatakana(sentence), remainder: ""))
-        results.append(Candidate(body: Transliterate.toHalfKatakana(sentence), remainder: ""))
         return results.reduce([]) { (res, candidate) -> [Candidate] in
             return res.contains { $0.body == candidate.body } ? res : res + [candidate]
         }
