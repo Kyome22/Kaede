@@ -35,7 +35,7 @@ class KaedeTests: XCTestCase {
         let candidates = kaede.requestCandidates(text: "saikou")
         let expects = ["催行", "再攻", "再校", "再構", "再考", "再興",
                        "採光", "採鉱", "斉衡", "最硬", "最高", "砕鉱",
-                       "菜肴", "サイコウ", "ｻｲｺｳ", "さいこう", "saikou"]
+                       "菜肴", "さいこう", "サイコウ", "ｻｲｺｳ", "saikou"]
         XCTAssertEqual(candidates, expects)
     }
 

@@ -43,19 +43,26 @@ public class Kaede {
             let words = list[kana.count - 1].filter { $0.ruby == kana }.map { $0.value }
             results.append(contentsOf: words)
         }
+        results.append(kana)
         results.append(Transliterate.toKatakana(kana))
         results.append(Transliterate.toHalfKatakana(kana))
-        results.append(kana)
         results.append(text)
         return NSOrderedSet(array: results).array as! [String]
     }
 
-    private func extractCandidates(text: String) -> [Candidate] {
-        if text.isEmpty { return [] }
+    private func extractCandidates(sentence: String) -> [Candidate] {
+        if sentence.isEmpty { return [] }
         var results = [Candidate]()
+        let text = convertRomanToKana(text: sentence)
         for i in (1 ... min(list.count, text.count)).reversed() {
-            let strL = String(text[text.startIndex ..< text.index(text.startIndex, offsetBy: i)])
-            let strR = String(text[text.index(text.startIndex, offsetBy: i) ..< text.endIndex])
+            let strL = String(text.prefix(i))
+            var strR = ""
+            for j in (1 ..< sentence.count).reversed() {
+                let kana = convertRomanToKana(text: String(sentence.prefix(j)))
+                if kana == strL {
+                    strR = String(sentence.suffix(sentence.count - j))
+                }
+            }
             var flag: Bool = false
             for test in list[strL.count - 1] {
                 if strL != test.ruby { continue }
@@ -68,19 +75,26 @@ public class Kaede {
                 results.append(Candidate(body: Transliterate.toHalfKatakana(strL), remainder: strR))
             }
         }
+        results.append(Candidate(body: text, remainder: ""))
+        results.append(Candidate(body: Transliterate.toKatakana(text), remainder: ""))
+        results.append(Candidate(body: Transliterate.toHalfKatakana(text), remainder: ""))
+        results.append(Candidate(body: sentence, remainder: ""))
         return results
     }
 
     public func requestCandidates(of sentence: String) -> [Candidate] {
-        let kana = convertRomanToKana(text: sentence)
-        var results = extractCandidates(text: kana)
-        results.append(Candidate(body: kana, remainder: ""))
-        results.append(Candidate(body: Transliterate.toKatakana(kana), remainder: ""))
-        results.append(Candidate(body: Transliterate.toHalfKatakana(kana), remainder: ""))
-        results.append(Candidate(body: sentence, remainder: ""))
+        let results = extractCandidates(sentence: sentence)
         return results.reduce([]) { (res, candidate) -> [Candidate] in
             return res.contains { $0.body == candidate.body } ? res : res + [candidate]
         }
     }
 
 }
+
+
+
+
+
+
+
+
