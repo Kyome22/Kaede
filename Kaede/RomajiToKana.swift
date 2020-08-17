@@ -9,7 +9,7 @@
 final class RomajiToKana {
 
     static func convertHiragana(roman: String) -> String {
-        var str = roman.lowercased()
+        var str = roman
         var n: Int = 0
         while str.count >= 2 && n < str.count - 1 {
             let strL = String(str[str.startIndex ..< str.index(str.startIndex, offsetBy: n)])
@@ -39,12 +39,8 @@ final class RomajiToKana {
         return str
     }
 
-    private static func isRoman(_ str: Character) -> Bool {
-        return NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z]+").evaluate(with: String(str))
-    }
-
     private static func nCheck(_ str: String) -> String {
-        switch str {
+        switch str.lowercased() {
         case "na": return str
         case "ni": return str
         case "nu": return str
@@ -52,22 +48,22 @@ final class RomajiToKana {
         case "no": return str
         case "ny": return str
         case "n'", "nn": return "ん"
-        default:
-            if str.first! == "n" {
-                return "ん" + String(str.last!)
-            } else {
-                return str
-            }
+        default: return str
         }
     }
 
+    private static func isRoman(_ str: String) -> Bool {
+        return NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z]+").evaluate(with: str)
+    }
+
     private static func xtuCheck(_ str: String) -> String {
-        if isRoman(str.first!) && str.first! == str.last! {
-            let f = str.first!
-            if f == "a" || f == "i" || f == "u" || f == "e" || f == "o" {
+        let c0 = str.first!.lowercased()
+        let c1 = String(str.last!)
+        if isRoman(c0) && c0 == c1.lowercased() {
+            if c0 == "a" || c0 == "i" || c0 == "u" || c0 == "e" || c0 == "o" {
                 return str
             } else {
-                return "っ" + String(str.last!)
+                return "っ" + c1
             }
         }
         return str
@@ -80,12 +76,12 @@ final class RomajiToKana {
         case 2:
             return two(str)
         case 3:
-            switch str.dropFirst().first! {
+            switch str.dropFirst().first!.lowercased() {
             case "y": return threeY(str)
             case "h": return threeH(str)
             case "w": return threeW(str)
             default:
-                switch str {
+                switch str.lowercased() {
                 case "tsa": return "つぁ"
                 case "tsi": return "つぃ"
                 case "tsu": return "つ"
@@ -97,14 +93,14 @@ final class RomajiToKana {
                 return str
             }
         case 4:
-            return (str == "xtsu" || str == "ltsu") ? "っ" : str
+            return (str.lowercased() == "xtsu" || str.lowercased() == "ltsu") ? "っ" : str
         default:
             return str
         }
     }
 
     private static func one(_ str: String) -> String {
-        switch str {
+        switch str.lowercased() {
         case "a": return "あ"
         case "i": return "い"
         case "u": return "う"
@@ -159,7 +155,7 @@ final class RomajiToKana {
     }
 
     private static func two(_ str: String) -> String {
-        switch str {
+        switch str.lowercased() {
         case "ba": return "ば"
         case "bi": return "び"
         case "bu": return "ぶ"
@@ -264,7 +260,7 @@ final class RomajiToKana {
 
     private static func threeY(_ str: String) -> String {
         func yaiueo(head: String, str: String) -> String {
-            switch str {
+            switch str.lowercased() {
             case "ya": return head + "ゃ"
             case "yi": return head + "ぃ"
             case "yu": return head + "ゅ"
@@ -273,7 +269,7 @@ final class RomajiToKana {
             default: return str
             }
         }
-        switch str.first! {
+        switch str.first!.lowercased() {
         case "b": return yaiueo(head: "び", str: String(str.dropFirst()))
         case "c": return yaiueo(head: "ち", str: String(str.dropFirst()))
         case "d": return yaiueo(head: "ぢ", str: String(str.dropFirst()))
@@ -293,9 +289,9 @@ final class RomajiToKana {
         case "x": return yaiueo(head: "", str: String(str.dropFirst()))
         case "z": return yaiueo(head: "じ", str: String(str.dropFirst()))
         default:
-            if str == "wyi" {
+            if str.lowercased() == "wyi" {
                 return "ゐ"
-            } else if str == "wye" {
+            } else if str.lowercased() == "wye" {
                 return "ゑ"
             } else {
                 return str
@@ -304,7 +300,7 @@ final class RomajiToKana {
     }
 
     private static func threeH(_ str: String) -> String {
-        switch str {
+        switch str.lowercased() {
         case "cha": return "ちゃ"
         case "chi": return "ち"
         case "chu": return "ちゅ"
@@ -335,7 +331,7 @@ final class RomajiToKana {
     }
 
     private static func threeW(_ str: String) -> String {
-        switch str {
+        switch str.lowercased() {
         case "dwa": return "どぁ"
         case "dwi": return "どぃ"
         case "dwu": return "どぅ"
