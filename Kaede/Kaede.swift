@@ -10,7 +10,7 @@
 
 public class Kaede {
 
-    private var list = [[Word]]()
+    public private(set) var list = [[Word]]()
 
     public init() {
         inputCSV()

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Takuto Nakamura. All rights reserved.
 //
 
-final class Transliterate {
+final public class Transliterate {
 
     private static func transliterateString(source: String, transform: CFString, reverse: Bool) -> String {
         let string = CFStringCreateMutableCopy(kCFAllocatorDefault, 0, source as CFString)
@@ -17,13 +17,13 @@ final class Transliterate {
         }
     }
 
-    static func toKatakana(_ string: String) -> String {
+    public static func toKatakana(_ string: String) -> String {
         return transliterateString(source: string,
                                    transform: kCFStringTransformHiraganaKatakana,
                                    reverse: false)
     }
 
-    static func toHalfKatakana(_ string: String) -> String {
+    public static func toHalfKatakana(_ string: String) -> String {
         return transliterateString(source: toKatakana(string),
                                    transform: kCFStringTransformFullwidthHalfwidth,
                                    reverse: false)

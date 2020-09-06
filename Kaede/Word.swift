@@ -6,11 +6,11 @@
 //  Copyright © 2020 Takuto Nakamura. All rights reserved.
 //
 
-struct Word {
-    let ruby: String
-    let value: String
+public struct Word {
+    public let ruby: String
+    public let value: String
 
-    var desctiption: String {
+    public var desctiption: String {
         return "ruby:\(ruby), value:\(value)"
     }
 }
