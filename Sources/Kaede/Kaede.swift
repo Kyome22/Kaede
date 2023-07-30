@@ -9,6 +9,8 @@ public struct Kaede {
     let romajiToKana = RomajiToKana()
     let transliterate = Transliterate()
 
+    public init() {}
+
     public func convertRomanToKana(text: String) -> String {
         return romajiToKana.convertHiragana(roman: text)
     }
