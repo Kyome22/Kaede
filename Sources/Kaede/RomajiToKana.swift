@@ -1,14 +1,14 @@
-//
-//  RomajiToKana.swift
-//  Kaede
-//
-//  Created by Takuto Nakamura on 2020/07/31.
-//  Copyright © 2020 Takuto Nakamura. All rights reserved.
-//
+/*
+ RomajiToKana.swift
+ Kaede
 
-final class RomajiToKana {
+ Created by Takuto Nakamura on 2023/07/30.
+*/
 
-    static func convertHiragana(roman: String) -> String {
+import Foundation
+
+struct RomajiToKana {
+    func convertHiragana(roman: String) -> String {
         var str = roman
         var n: Int = 0
         while str.count >= 2 && n < str.count - 1 {
@@ -39,7 +39,7 @@ final class RomajiToKana {
         return str
     }
 
-    private static func nCheck(_ str: String) -> String {
+    private func nCheck(_ str: String) -> String {
         switch str.lowercased() {
         case "na": return str
         case "ni": return str
@@ -52,11 +52,11 @@ final class RomajiToKana {
         }
     }
 
-    private static func isRoman(_ str: String) -> Bool {
+    private func isRoman(_ str: String) -> Bool {
         return NSPredicate(format: "SELF MATCHES %@", "[a-zA-Z]+").evaluate(with: str)
     }
 
-    private static func xtuCheck(_ str: String) -> String {
+    private func xtuCheck(_ str: String) -> String {
         let c0 = str.first!.lowercased()
         let c1 = String(str.last!)
         if isRoman(c0) && c0 == c1.lowercased() {
@@ -69,7 +69,7 @@ final class RomajiToKana {
         return str
     }
 
-    private static func convert(_ str: String) -> String {
+    private func convert(_ str: String) -> String {
         switch str.count {
         case 1:
             return one(str)
@@ -99,7 +99,7 @@ final class RomajiToKana {
         }
     }
 
-    private static func one(_ str: String) -> String {
+    private func one(_ str: String) -> String {
         switch str.lowercased() {
         case "a": return "あ"
         case "i": return "い"
@@ -154,7 +154,7 @@ final class RomajiToKana {
         }
     }
 
-    private static func two(_ str: String) -> String {
+    private func two(_ str: String) -> String {
         switch str.lowercased() {
         case "ba": return "ば"
         case "bi": return "び"
@@ -258,7 +258,7 @@ final class RomajiToKana {
         }
     }
 
-    private static func threeY(_ str: String) -> String {
+    private func threeY(_ str: String) -> String {
         func yaiueo(head: String, str: String) -> String {
             switch str.lowercased() {
             case "ya": return head + "ゃ"
@@ -299,7 +299,7 @@ final class RomajiToKana {
         }
     }
 
-    private static func threeH(_ str: String) -> String {
+    private func threeH(_ str: String) -> String {
         switch str.lowercased() {
         case "cha": return "ちゃ"
         case "chi": return "ち"
@@ -330,7 +330,7 @@ final class RomajiToKana {
         }
     }
 
-    private static func threeW(_ str: String) -> String {
+    private func threeW(_ str: String) -> String {
         switch str.lowercased() {
         case "dwa": return "どぁ"
         case "dwi": return "どぃ"
@@ -362,5 +362,4 @@ final class RomajiToKana {
         default: return str
         }
     }
-
 }
