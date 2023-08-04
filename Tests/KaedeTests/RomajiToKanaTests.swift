@@ -32,7 +32,7 @@ final class RomajiToKanaTests: XCTestCase {
         actual = sut.convertHiragana(roman: "rarirurero")
         XCTAssertEqual(actual, "らりるれろ")
 
-        actual = sut.convertHiragana(roman: "wawonnn")
+        actual = sut.convertHiragana(roman: "wawon'nn")
         XCTAssertEqual(actual, "わをんん")
 
         actual = sut.convertHiragana(roman: "konnnichiha")
@@ -84,7 +84,7 @@ final class RomajiToKanaTests: XCTestCase {
     func testComplex() {
         let sut = RomajiToKana()
 
-        var actual = sut.convertHiragana(roman: "shachousan")
+        var actual = sut.convertHiragana(roman: "shachousann")
         XCTAssertEqual(actual, "しゃちょうさん")
 
         actual = sut.convertHiragana(roman: "thissyu")

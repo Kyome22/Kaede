@@ -106,7 +106,6 @@ struct RomajiToKana {
         case "u": return "う"
         case "e": return "え"
         case "o": return "お"
-        case "n": return "ん"
         case "1": return "１"
         case "2": return "２"
         case "3": return "３"
