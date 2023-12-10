@@ -1,3 +1,4 @@
+# Mac
 .DS_Store
 
 # Xcode
@@ -5,6 +6,6 @@ xcuserdata/
 *.xcuserstate
 
 # Swift Package Manager
-Packages
-.swiftpm
-.build
+Packages.resolved
+.swiftpm/
+.build/
